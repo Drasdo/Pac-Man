@@ -2253,7 +2253,7 @@ MonoBehaviour:
   - {fileID: 1115417728}
   - {fileID: 1753662558}
   - {fileID: 1582427594}
-  cur: 0
+  waypointNum: 0
   gameover: {fileID: 1090520746}
   ghosts: {fileID: 1088927915}
   button: {fileID: 1993511136}
@@ -2262,7 +2262,6 @@ MonoBehaviour:
   time: {fileID: 989800235}
   lives: 0
   controller: {fileID: 1624085817}
-  speed: 0.2
 --- !u!50 &42127337
 Rigidbody2D:
   serializedVersion: 4
@@ -15452,7 +15451,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentScore: 5000
-  timer: 0
   levelOver: 0
 --- !u!1 &214677415
 GameObject:
@@ -15516,7 +15514,7 @@ MonoBehaviour:
   - {fileID: 757806250}
   - {fileID: 1759033798}
   - {fileID: 1582427594}
-  cur: 0
+  waypointNum: 0
   gameover: {fileID: 1090520746}
   ghosts: {fileID: 1088927915}
   button: {fileID: 1993511136}
@@ -15525,7 +15523,6 @@ MonoBehaviour:
   time: {fileID: 989800235}
   lives: 0
   controller: {fileID: 1624085817}
-  speed: 0.2
 --- !u!50 &214677417
 Rigidbody2D:
   serializedVersion: 4
@@ -29924,7 +29921,7 @@ MonoBehaviour:
   - {fileID: 346638695}
   - {fileID: 1115417728}
   - {fileID: 1582427594}
-  cur: 0
+  waypointNum: 0
   gameover: {fileID: 1090520746}
   ghosts: {fileID: 1088927915}
   button: {fileID: 1993511136}
@@ -29933,7 +29930,6 @@ MonoBehaviour:
   time: {fileID: 989800235}
   lives: 0
   controller: {fileID: 1624085817}
-  speed: 0.2
 --- !u!50 &413246302
 Rigidbody2D:
   serializedVersion: 4
@@ -71142,7 +71138,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8efc21c57d7a3ba43a00a4bbc7ae86b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentTime: 0
   timer: 0
   levelOver: 0
 --- !u!114 &989800238
@@ -104614,7 +104609,7 @@ MonoBehaviour:
   - {fileID: 1123042554}
   - {fileID: 1759033798}
   - {fileID: 1582427594}
-  cur: 0
+  waypointNum: 0
   gameover: {fileID: 1090520746}
   ghosts: {fileID: 1088927915}
   button: {fileID: 1993511136}
@@ -104623,7 +104618,6 @@ MonoBehaviour:
   time: {fileID: 989800235}
   lives: 0
   controller: {fileID: 1624085817}
-  speed: 0.2
 --- !u!50 &1529115305
 Rigidbody2D:
   serializedVersion: 4
@@ -113244,8 +113238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a91e2c92f4d7864a8932f0c3a0f1dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.24
-  dest: {x: 0, y: 0}
+  destination: {x: 0, y: 0}
   lives: 3
 --- !u!1 &1660124768
 GameObject:
@@ -137760,13 +137753,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 923bfd40268234946b585ed380daa381, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pellets: {fileID: 9160464252459698720, guid: bc8621eb34375ec43b738f685b1ed07c, type: 3}
-  gameover: {fileID: 1090520746}
-  ghosts: {fileID: 1088927915}
-  pacman: {fileID: 1659408499}
-  button: {fileID: 1993511136}
-  score: {fileID: 213865029}
-  time: {fileID: 989800235}
   controller: {fileID: 1624085817}
 --- !u!1001 &1994231394
 PrefabInstance:
