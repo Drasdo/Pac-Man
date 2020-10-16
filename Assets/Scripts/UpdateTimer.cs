@@ -5,11 +5,10 @@ using UnityEngine.UI;
 
 public class UpdateTimer : MonoBehaviour
 {
-    public int currentTime = 0;
+    private int currentTime = 0;
     public int timer = 0;
     public bool levelOver = false;
-    //public GameObject gameover; 
-    Text[] time;
+    private Text[] time;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +19,7 @@ public class UpdateTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(levelOver);
+        //Updates time while level is active 
         if (levelOver == false)
         {
             if (timer == 60)
@@ -37,7 +36,7 @@ public class UpdateTimer : MonoBehaviour
         }
 
     }
-
+    // resets timer
     public void Reset()
     {
         currentTime = 0;

@@ -4,51 +4,56 @@ using UnityEngine;
 
 public class PacmanMove : MonoBehaviour
 {
-    public float speed = 0.16f;
-    public Vector2 dest = Vector2.zero;
+    private float speed = 0.16f;
+    public Vector2 destination = Vector2.zero;
     public int lives = 3; 
 
     void Start()
     {
-        dest = transform.position;
+        destination = transform.position;
         
     }
 
     void Update()
     {
         
-        //Move 
-        Vector2 p = Vector2.MoveTowards(transform.position, dest, speed);
-        GetComponent<Rigidbody2D>().MovePosition(p);
-
-        //Animation
-        Vector2 dir = dest - (Vector2)transform.position;
-        //Debug.Log(dir);
-        GetComponent<Animator>().SetFloat("DirX", dir.x);
-        GetComponent<Animator>().SetFloat("DirY", dir.y);
-
-        //movement
-        if ((Vector2)transform.position == dest)
+        // Pacman moves to current destination
+        Vector2 position = Vector2.MoveTowards(transform.position, destination, speed);
+        GetComponent<Rigidbody2D>().MovePosition(position);
+        // Changes the direction pacman is facing
+        Vector2 direction = destination - (Vector2)transform.position;
+        GetComponent<Animator>().SetFloat("DirY", direction.y);
+        GetComponent<Animator>().SetFloat("DirX", direction.x);
+        //Sets new desination with arrow keys
+        if ((Vector2)transform.position == destination)
         {
-            if (Input.GetKey(KeyCode.UpArrow) && valid(Vector2.up)) 
-                dest = (Vector2)transform.position + Vector2.up;
-            if (Input.GetKey(KeyCode.RightArrow) && valid(Vector2.right))
-                dest = (Vector2)transform.position + Vector2.right;
-            if (Input.GetKey(KeyCode.DownArrow) && valid(-Vector2.up))
-                dest = (Vector2)transform.position - Vector2.up;
-            if (Input.GetKey(KeyCode.LeftArrow) && valid(-Vector2.right))
-                dest = (Vector2)transform.position - Vector2.right;
+            // Up
+            if (Input.GetKey(KeyCode.UpArrow) && wallCheck(Vector2.up))
+            {
+                destination = (Vector2)transform.position + Vector2.up;
+            }
+            //right
+            if (Input.GetKey(KeyCode.RightArrow) && wallCheck(Vector2.right))
+            {
+                destination = (Vector2)transform.position + Vector2.right;
+            }
+            //down
+            if (Input.GetKey(KeyCode.DownArrow) && wallCheck(Vector2.down))
+            {
+                destination = (Vector2)transform.position + Vector2.down;
+            }    
+            //left
+            if (Input.GetKey(KeyCode.LeftArrow) && wallCheck(Vector2.left))
+            {
+                destination = (Vector2)transform.position + Vector2.left;
+            } 
         }
-
-
-
     }
-
-    bool valid(Vector2 dir)
+    //Checks to see if pacman will hit a wall
+    bool wallCheck(Vector2 direction)
     {
-        // Cast Line from 'next to Pac-Man' to 'Pac-Man'
-        Vector2 pos = transform.position;
-        RaycastHit2D hit = Physics2D.Linecast(pos + dir, pos);
-        return (hit.collider == GetComponent<Collider2D>());
+        Vector2 location = transform.position;
+        RaycastHit2D touch = Physics2D.Linecast(location + direction, location);
+        return (touch.collider == GetComponent<Collider2D>());
     }
 }

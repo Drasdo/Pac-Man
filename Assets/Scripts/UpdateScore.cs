@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class UpdateScore : MonoBehaviour
 {
     public int currentScore = 5000;
-    public int timer = 0;
+    private int timer = 0;
     public bool levelOver = false;
-    Text[] score;
+    private Text[] score;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +20,7 @@ public class UpdateScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Score lowers by 10 every second not completed
         score[0].text = "Score: " + currentScore;
         if (levelOver == false)
         {
@@ -33,7 +34,7 @@ public class UpdateScore : MonoBehaviour
         }
 
     }
-
+    // resets score
     public void Reset()
     {
         currentScore = 5000;

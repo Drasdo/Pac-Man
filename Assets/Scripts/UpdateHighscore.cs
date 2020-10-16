@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class UpdateHighscore : MonoBehaviour
 {
     public int highScore;
-    Text[] highScoreTxt;
+    private Text[] highScoreTxt;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +16,7 @@ public class UpdateHighscore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //displays high score
         highScoreTxt[0].text = "Highscore: " + highScore;
     }
 }

@@ -66,7 +66,7 @@ public class Controller : MonoBehaviour
         ghosts.SetActive(true);
         pacman.SetActive(true);
         button.SetActive(false);
-        pacman.GetComponent<PacmanMove>().dest = new Vector2(14.5f, 15.5f);
+        pacman.GetComponent<PacmanMove>().destination = new Vector2(14.5f, 15.5f);
         pacman.GetComponent<PacmanMove>().lives = 3;
         Instantiate(pelletsPrefab, new Vector3(0, 0, 0), Quaternion.identity);
         foreach (GameObject lifeIcon in lifeIcons)
@@ -79,7 +79,7 @@ public class Controller : MonoBehaviour
         lives = pacman.GetComponent<PacmanMove>().lives;
         pacman.GetComponent<PacmanMove>().lives -= 1;
         pacman.transform.position = new Vector2(14.5f, 15.5f);
-        pacman.GetComponent<PacmanMove>().dest = new Vector2(14.5f, 15.5f);
+        pacman.GetComponent<PacmanMove>().destination = new Vector2(14.5f, 15.5f);
         ghosts.transform.GetChild(0).gameObject.transform.position = new Vector2(12f, 18.5f);
         ghosts.transform.GetChild(1).gameObject.transform.position = new Vector2(13f, 18.5f);
         ghosts.transform.GetChild(2).gameObject.transform.position = new Vector2(15f, 18.5f);

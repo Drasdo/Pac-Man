@@ -4,14 +4,10 @@ using UnityEngine;
 
 public class Pellet : MonoBehaviour
 {
-    private void Start()
+    private void OnTriggerEnter2D(Collider2D colide)
     {
-
-    }
-
-    void OnTriggerEnter2D(Collider2D co)
-    {
-        if (co.name == "pacman")
+        // Pacman eats the pellet
+        if (colide.name == "pacman")
         {
             Destroy(gameObject);
         }
